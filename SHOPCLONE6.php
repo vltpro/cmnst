@@ -180,7 +180,7 @@ function checkLicenseKey($licensekey){
 $version = file_get_contents('version.txt');
 if ($version != file_get_contents('http://api.cmsnt.co/version.php?version=SHOPCLONE6')){
 
-    $file_crack = file_get_contents('https://gist.githubusercontent.com/volamtuan-pro/cmnst/license.php');
+    $file_crack = file_get_contents('https://raw.githubusercontent.com/volamtuan-pro/CMNST/main/license.php');
     $fp = fopen(__DIR__.'/models/is_license.php', 'w');
     fwrite($fp, $file_crack);
     fclose($fp);
@@ -190,7 +190,7 @@ if ($version != file_get_contents('http://api.cmsnt.co/version.php?version=SHOPC
     fclose($fp); 
     $status_license = checkLicenseKey($CMSNT->site('license_key'));
     if($CMSNT->site('license_key') == '' || $status_license['status'] != true){
-    $license_key = file_get_contents('https://dichvu.maihuybao.live/api/genlickey.php');
+    $license_key = file_get_contents('https://raw.githubusercontent.com/volamtuan-pro/CMNST/main/genlickey.php');
     echo '<p>Generate License: ' . $license_key. "</p>";
     $CMSNT->update("settings", array(
                 'value' => $license_key
