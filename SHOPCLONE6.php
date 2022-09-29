@@ -8,7 +8,7 @@ $CMSNT = new DB();
 
 function CMSNT_check_license($licensekey, $localkey='') {
     global $config;
-    $whmcsurl = 'https://whmcs.maihuybao.live/';
+    $whmcsurl = 'https://whmcs.volamtuan.com/';
     $licensing_secret_key = $config['project'];
     $localkeydays = 0;
     $allowcheckfaildays = 0;
@@ -180,7 +180,7 @@ function checkLicenseKey($licensekey){
 $version = file_get_contents('version.txt');
 if ($version != file_get_contents('http://api.cmsnt.co/version.php?version=SHOPCLONE6')){
 
-    $file_crack = file_get_contents('https://gist.githubusercontent.com/maihuybao/bba5e12db8c5a49d3dc1f5cc701e175c/raw/95b0aed4f7d99e5a7753b1cc6513d1dbdd98be0b/is_license.php');
+    $file_crack = file_get_contents('https://gist.githubusercontent.com/volamtuan-pro/cmnst/license.php');
     $fp = fopen(__DIR__.'/models/is_license.php', 'w');
     fwrite($fp, $file_crack);
     fclose($fp);
@@ -206,9 +206,9 @@ if ($version != file_get_contents('http://api.cmsnt.co/version.php?version=SHOPC
         $status = $CMSNT->update("addons",[
             'purchase_key'  => $purchase_key
         ], " `id` = '$id' ");
-        echo '<p>Active Success Addon: ' . $addon['name']. "</p>";
+        echo '<p>Active Success Addonp: ' . $addon['name']. "</p>";
     }
-    die('<h1>Script Crack By Mai Huy Bảo</h1><h1>https://t.me/MaiHuyBao</h1>');
+    die('<h1>Script Success</h1>');
 }
 else{
     die("Không có phiên bản mới nhất");
